@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170519183526) do
+ActiveRecord::Schema.define(version: 20170520002204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "calendar_items", force: :cascade do |t|
+    t.string   "title"
+    t.string   "body"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string   "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "comfy_cms_blocks", force: :cascade do |t|
     t.string   "identifier",     null: false
